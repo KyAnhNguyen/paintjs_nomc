@@ -4,6 +4,7 @@ const colors = document.getElementsByClassName("jsColor");
 const mode = document.getElementById("jsMode");
 const ctx = canvas.getContext("2d");
 const saveBt = document.getElementById("jsSave");
+const clearBt = document.getElementById("jsClear");
 
 const INITIAL_COLOR = "#2c2c2c";
 const CANVAS_SIZE = 600;
@@ -105,4 +106,13 @@ function handleSaveClick() {
 
 if(saveBt){
     saveBt.addEventListener("click", handleSaveClick);
+}
+
+function handleClearClick() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+if(clearBt){
+    clearBt.addEventListener("click", handleClearClick);
 }
